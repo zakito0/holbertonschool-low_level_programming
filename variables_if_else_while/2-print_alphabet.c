@@ -6,12 +6,12 @@
 int main (void){
     char ch;
 
-    // Loop from 'a' to 'z'
+    /* Loop from 'a' to 'z' */
     for (ch = 'a'; ch <= 'z'; ch++) {
         printf("%c ", ch);
     }
 
-    printf("\n"); // New line after printing all letters
+    printf("\n"); /* New line after printing all letters */
     return 0;
 }
 
