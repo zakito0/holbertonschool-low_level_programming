@@ -1,27 +1,29 @@
 #include <stdio.h>
 
+/**
+ * main - Prints the alphabet in lowercase, and then in uppercase,
+ * followed by a new line.
+ * Return: Always 0 (Success)
+ */
 int main(void)
 {
-    char c;
+	char c;
 
-    /* 1. Afficher les minuscules de 'a' à 'z' */
-    c = 'a';
-    while (c <= 'z')
-   {
-        putchar(c); /* 1ère utilisation de putchar */
-        c++;
-    }
+	c = 'a';
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
 
-    /* 2. Afficher les majuscules de 'A' à 'Z' */
-    c = 'A';
-    while (c <= 'Z')
-    {
-        putchar(c); /* 2ème utilisation de putchar */
-        c++;
-    }
+	c = 'A';
+	while (c <= 'Z')
+	{
+		putchar(c);
+		c++;
+	}
 
-    /* 3. Afficher le saut de ligne */
-    putchar('\n'); /* 3ème utilisation de putchar */
+	putchar('\n');
 
-    return (0);
+	return (0);
 }
