@@ -4,7 +4,7 @@
  * product , with a variable r ; c and prod
  * Return: void
  */
-int times_table(void) {
+int (void) {
   int r;
   int c;
   int prod;
