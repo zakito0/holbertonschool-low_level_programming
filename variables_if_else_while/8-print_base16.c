@@ -1,21 +1,24 @@
+
 #include <stdio.h>
+
 /**
- * main - Prints numbers in base 16 *
+ * main - Prints numbers in base 16
+ *
  * Return: Always 0
  */
 int main(void)
 {
-	char base16;
-    char base16L;
+	int number;
+	char letter;
 
-	for (base16 = '0'; base16 <= '9'; base16++)
+	for (number = 0; number <= 9; number++)
 	{
-		putchar(base16);
+		putchar(number + '0');
 	}
-    for (base16L = 'a'; base16L <= 'f'; base16L++)
-    {
-        putchar(base16L);
-    }
+	for (letter = 'a'; letter <= 'f'; letter++)
+	{
+		putchar(letter);
+	}
 	putchar('\n');
 	return (0);
 }
