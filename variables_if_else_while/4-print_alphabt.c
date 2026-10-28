@@ -1,8 +1,21 @@
 #include <stdio.h>
+/*
+* Entry point - start
+* Success 0
+*/
 
 int main(void)
-    for(int x = 'A'; x <= 'Z'; x++)
 {
-  putchar(tolower(x));
+    char x;
+
+    for (x = 'a'; x <= 'z'; x++)
+    {
+        if (x != 'e' && x != 'q')
+        {
+            putchar(x);
+        }
+    }
+    putchar('\n');
+
+    return (0);
 }
-return (0)
