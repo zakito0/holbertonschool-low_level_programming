@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *Prints the alphabet in lowercase except q and e
+ *main - Prints the alphabet in lowercase except q and e
  *
  * Return: Always 0
  */
