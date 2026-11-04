@@ -3,3 +3,5 @@
 9-
 9-strcpy.c
 100-atoi.c
+1-strncat.c
+0-strcat.c
