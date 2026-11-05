@@ -10,3 +10,5 @@
 2-strchr.c
 2-str.c
 3-strspn.c
+4-strpbrk
+4-strpbrk.c
