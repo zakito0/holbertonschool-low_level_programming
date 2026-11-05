@@ -40,6 +40,33 @@ int main(void)
           result = A + B;
           printf("Result: %d", result);
         }
+        if (c == '2')
+        {
+          printf("Enter a number: ");
+          scanf("%d", &A);
+          printf("Enter a second number: ");
+          scanf("%d", &B);
+          result = A - B;
+          printf("Result: %d", result);
+        }
+        if (c == '3')
+        {
+          printf("Enter a number: ");
+          scanf("%d", &A);
+          printf("Enter a second number: ");
+          scanf("%d", &B);
+          result = A * B;
+          printf("Result: %d", result);
+        }
+        if (c == '4')
+        {
+          printf("Enter a number: ");
+          scanf("%d", &A);
+          printf("Enter a second number: ");
+          scanf("%d", &B);
+          result = A / B;
+          printf("Result: %d", result);
+        }
     }
     
     return (0);
