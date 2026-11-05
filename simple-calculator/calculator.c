@@ -64,6 +64,12 @@ int main(void)
           scanf("%d", &A);
           printf("Enter a second number: ");
           scanf("%d", &B);
+          if (B == 0)
+          {
+            printf("You cannot divide by 0");
+            scanf("%d", &B);
+          }
+          
           result = A / B;
           printf("Result: %d", result);
         }
