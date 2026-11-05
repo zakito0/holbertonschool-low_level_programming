@@ -22,9 +22,13 @@ int main(void)
     puts("4) divide");
     puts("0) Quit");
 
-    while (c != '0') 
+    while (c != '0')
     {
         c = getchar();
+        if (c != '0' && c != '\n')
+        {
+        printf("Invalid Choice\n");
+        }
     }
     
     return (0);
