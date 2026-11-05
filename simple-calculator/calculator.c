@@ -12,9 +12,9 @@
 int main(void)
 {
     int c;
-    int A;
-    int B;
-    int result;
+    float A;
+    float B;
+    float result;
     c = 0;
 
     puts("Welcome to Calculito !");
@@ -27,51 +27,52 @@ int main(void)
     while (c != '0')
     {
         c = getchar();
-        if (c != '0' && c != '\n')
-        {
-        printf("Invalid Choice\n");
-        }
+        
         if (c == '1')
         {
           printf("Enter a number: ");
-          scanf("%d", &A);
+          scanf("%f", &A);
           printf("Enter a second number: ");
-          scanf("%d", &B);
+          scanf("%f", &B);
           result = A + B;
-          printf("Result: %d", result);
+          printf("Result: %f", result);
         }
-        if (c == '2')
+        else if (c == '2')
         {
           printf("Enter a number: ");
-          scanf("%d", &A);
+          scanf("%f", &A);
           printf("Enter a second number: ");
-          scanf("%d", &B);
+          scanf("%f", &B);
           result = A - B;
-          printf("Result: %d", result);
+          printf("Result: %f", result);
         }
-        if (c == '3')
+        else if (c == '3')
         {
           printf("Enter a number: ");
-          scanf("%d", &A);
+          scanf("%f", &A);
           printf("Enter a second number: ");
-          scanf("%d", &B);
+          scanf("%f", &B);
           result = A * B;
-          printf("Result: %d", result);
+          printf("Result: %f", result);
         }
-        if (c == '4')
+        else if (c == '4')
         {
           printf("Enter a number: ");
-          scanf("%d", &A);
+          scanf("%f", &A);
           printf("Enter a second number: ");
-          scanf("%d", &B);
+          scanf("%f", &B);
           if (B == 0)
           {
             printf("You cannot divide by 0");
-            scanf("%d", &B);
+            scanf("%f", &B);
           }
           
           result = A / B;
-          printf("Result: %d", result);
+          printf("Result: %f", result);
+        }
+        else if (c != '0' && c != '\n')
+        {
+        printf("Invalid Choice\n");
         }
     }
     
