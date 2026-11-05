@@ -9,21 +9,25 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+void print_menu(void)
+{
+    puts("\n--- Menu Calculito ---");
+    puts("1) Add");
+    puts("2) Substract");
+    puts("3) Multiply");
+    puts("4) divide");
+    puts("0) Quit");
+    printf("> ");
+}
+
+ int main(void)
 {
     int c;
     float A;
     float B;
     float result;
     c = 0;
-
-    puts("Welcome to Calculito !");
-    puts("1) Add");
-    puts("2) Substract");
-    puts("3) Multiply");
-    puts("4) divide");
-    puts("0) Quit");
-
+    print_menu();
     while (c != '0')
     {
         c = getchar();
@@ -36,6 +40,8 @@ int main(void)
           scanf("%f", &B);
           result = A + B;
           printf("Result: %f", result);
+          getchar();
+          print_menu();
         }
         else if (c == '2')
         {
@@ -45,6 +51,7 @@ int main(void)
           scanf("%f", &B);
           result = A - B;
           printf("Result: %f", result);
+          print_menu();
         }
         else if (c == '3')
         {
@@ -54,6 +61,7 @@ int main(void)
           scanf("%f", &B);
           result = A * B;
           printf("Result: %f", result);
+          print_menu();
         }
         else if (c == '4')
         {
@@ -69,10 +77,12 @@ int main(void)
           
           result = A / B;
           printf("Result: %f", result);
+          print_menu();
         }
         else if (c != '0' && c != '\n')
         {
         printf("Invalid Choice\n");
+        print_menu();
         }
     }
     
