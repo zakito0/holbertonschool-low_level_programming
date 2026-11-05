@@ -12,7 +12,9 @@
 int main(void)
 {
     int c;
-
+    int A;
+    int B;
+    int result;
     c = 0;
 
     puts("Welcome to Calculito !");
@@ -28,6 +30,15 @@ int main(void)
         if (c != '0' && c != '\n')
         {
         printf("Invalid Choice\n");
+        }
+        if (c == '1')
+        {
+          printf("Enter a number: ");
+          scanf("%d", &A);
+          printf("Enter a second number: ");
+          scanf("%d", &B);
+          result = A + B;
+          printf("Result: %d", result);
         }
     }
     
