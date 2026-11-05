@@ -5,3 +5,4 @@
 100-atoi.c
 1-strncat.c
 0-strcat.c
+0-memset.c
