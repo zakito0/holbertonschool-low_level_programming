@@ -1,5 +1,4 @@
 #include <stdlib.h>
-
 /**
  * _calloc - Allocates memory for an array, using malloc
  * @nmemb: Number of elements in the array
@@ -26,3 +25,4 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	return (ptr);
 }
+
