@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <unistd.h>
+/**
+ * 
+ * 
+ * 
+ */
+int main(void)
+{
+    puts("Welcome to Calculito !");
+    puts("1) Add");
+    puts("2) Substract");
+    puts("3) Multiply");
+    puts("4) divide");
+    puts("0) Quit");
+    int c;
+    while (c != '0') 
+    {
+        c = getchar();
+    }
+    return(0);
+}
