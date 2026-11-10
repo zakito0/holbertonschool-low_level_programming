@@ -27,14 +27,4 @@ n = len2;
 concat = malloc(len1 + n + 1);
 if (concat == NULL)
 return (NULL);
-for (i = 0; i < len1; i++)
-{
-concat[i] = s1[i];
-}
-for (i = 0; i < n; i++)
-{
-concat[len1 + i] = s2[i];
-concat[len1 + n] = '\0';
-}
-return (concat);
 }
