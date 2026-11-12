@@ -70,7 +70,7 @@ return (NULL);
 }
 _strcpy(new_dog_instance->name, name);
 
-new_dog_instance->owner = malloc(sizeof(char) * (strlen(owner) + 1));
+new_dog_instance->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
 if (new_dog_instance->owner == NULL)
 {
 free(new_dog_instance->name);
