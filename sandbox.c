@@ -1,10 +1,7 @@
-#include <stdio.h> 
-int main(void) 
-{ 
-    int x = 0;
-     if (x) 
-     puts("A");
-    else 
-     puts("B");
-    return (0); 
+#include "stdio.h"
+int main(void)
+{
+    char str[100] = "Hello, World!";
+    puts(str);
+    return 0;
 }
