@@ -1,3 +1,0 @@
-﻿#This is the beginning of the Function Pointer Chapter, a very good one :
-rt
-grzthrthrt
