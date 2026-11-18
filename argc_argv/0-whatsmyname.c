@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
- * - Fixed the argv declaration to char *argv[]
- * - Replaced the no-op argv[1] with a printf statement using argv[i]
- * - Added a standard return 0 at the end
+ * main - prints its name, followed by a new line.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
-int main(int argc, char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
-    printf("My name is %s\n", argv[1]);
-    return 0;
+    printf("%s\n", argv[0]);
+    return (0);
 }
