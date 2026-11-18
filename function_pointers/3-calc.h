@@ -13,8 +13,8 @@ int op_mod(int a, int b);
  */
 typedef struct op
 {
-    char *op;
-    int (*f)(int a, int b);
+	char *op;
+	int (*f)(int a, int b);
 } op_t;
 #include <stdlib.h>
 #include <stdio.h>
@@ -22,3 +22,4 @@ typedef struct op
 #include <stddef.h>
 int (*get_op_func(char *s))(int, int);
 #endif
+
