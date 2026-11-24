@@ -2,7 +2,7 @@
 
 ## 1. `heap_example`
 
-- **Error Type:** Memory leak (`definitely lost: 6 bytes in 1 blocks`). Valgrind reports 1 error from 1 context.
+- **Error Type:** Memory leak due to lost ownership (`definitely lost: 6 bytes in 1 blocks`). Valgrind reports 1 error from 1 context.
 - **Memory Object Involved:** The 6-byte heap block at `0x4a934d0` storing the string `"Alice\0"` (`alice->name`), allocated with `malloc` in `person_new` (`heap_example.c:21`), called from `main` (`heap_example.c:51`).
 - **Cause / Lifetime Violation:** In `main`, `bob` is freed completely (`free(bob->name)` followed by `free(bob)`). However, `alice` is freed with `person_free_partial(alice)`, which only frees the `Person` struct (`0x4a93480`) and never frees `alice->name` (`0x4a934d0`). Once the struct is freed, the only pointer to `"Alice\0"` is lost, leaving the 6-byte block allocated and unreachable until program exit.
 - **Heap Summary Note:** Valgrind reports 5 allocs and 4 frees (1,066 bytes total). Four allocations come from `alice` and `bob` (two structs + two name strings), and the extra 1,024-byte allocation/free is the internal `stdout` buffer created by `printf`.
@@ -31,3 +31,9 @@
 - **Memory Object Involved:** The pointer `nums` in `main`, which holds `NULL` (`0x0`). No user heap block was allocated.
 - **Cause / Lifetime Violation:** `allocate_numbers(0)` hits `if (n <= 0)` and returns `NULL` without calling `malloc`. `main` does not check whether `nums` is `NULL` before running `nums[0] = 42`, attempting to write 4 bytes to unmapped address `0x0`. The OS immediately terminates the process with `SIGSEGV` before `printf` or `free(nums)` is reached.
 - **Heap Summary Note (`still reachable: 1,024 bytes`):** Valgrind reports 1 alloc and 0 frees (1,024 bytes). This is not a user memory leak—it is the internal `stdout` buffer allocated by the earlier `printf` calls. Because the program crashed with `SIGSEGV`, normal exit cleanup never ran to free it.
+
+## 5. AI Evaluation and Manual Correction
+
+- **AI Claim (`crash_example`):** In the initial analysis of `crash_example`, the AI stated that no heap memory was allocated at all and omitted the Valgrind `HEAP SUMMARY` and `LEAK SUMMARY`.
+- **Why It Is Partially Incorrect:** Although user code never reaches `malloc` (because `allocate_numbers(0)` returns `NULL` early), running Valgrind reveals `total heap usage: 1 allocs, 0 frees, 1,024 bytes allocated` and `still reachable: 1,024 bytes in 1 blocks`.
+- **Correction:** The 1,024-byte allocation comes from `glibc`'s internal `stdout` buffer created by the earlier `printf` calls. Because the NULL pointer dereference triggers `SIGSEGV`, the process terminates abruptly and skips standard C runtime exit cleanup, leaving that buffer allocated (`still reachable`) at exit rather than freed. It is neither "0 allocations" nor a user-code memory leak.
